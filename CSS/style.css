@@ -1,0 +1,788 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;       /*--pour supp les puces des listes par defaut--*/
+    text-decoration: none;    /*-- supp decoration de text par defaut*--------*/
+}
+/*--------Start: general---------------------------------------------------------*/
+body {
+    background-color: white;
+    overflow-x: hidden;           /*---pour cacher les contenus qui dépassent--*/
+    /* background-color: black;   ---pour travailler et voir les espaces-- */
+    margin: auto;
+    }
+
+#general-page {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    width: 100%;
+    color: #767676;
+    overflow: hidden;
+    max-width: 1920px;
+}
+
+/*---------End: general-------------------------------------------------------------*/
+
+/*---------Start:header/logo/menu---------------------------------------------------*/
+
+header {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 9%;
+    padding: 1.250em 0;
+    background-color: white;
+    z-index: 10;
+}
+/*-------Start: MENU---------*/
+
+.div-header {
+    display: flex;
+    justify-content: space-between;                           /*mettre menu horizontale*/
+    align-items: center;
+    width: 1440px;
+    height: 100%;
+    z-index: 10;
+    background-color: white;
+    margin: 0 1em;
+}
+
+.menu {
+    display: flex;
+}
+.menu li a {
+    font-size: 14px;
+    padding: 0.750em;
+    color: #767676;
+}
+.menu li a:hover {
+    color: black;
+    border-top: 4px solid #5CADD3;
+    padding-top: 41px;
+}
+/*------END: MENU------*/
+/*----------End: header/logo/menu------------------------------------------------*/
+
+/*----------Start: slider--------------------------------------------------------*/
+
+.section1 {
+    background-color: white; /*a retire aide pour visibilité*/
+}
+
+#Accueil {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 65px 0 0 0;
+    align-items: center;
+    justify-content: center;
+}
+
+/*--parti texte-H-P-BU sur image*/  
+
+.slogan {                      
+    position: absolute;
+    width: 38%;
+    left: 14%;
+    bottom: 39%;
+    color: white;
+    font-size: 16px;
+}
+.slogan h1 {
+    font-size: 36px;
+    text-transform: uppercase;                                          /*majuscule:*/
+    color: white;
+    margin: 30px 30px 35px 30px;
+}
+.slogan p {
+    font-family: 'Roboto', Arial, sans-serif;
+    padding-left: 30px;
+    font-size: 14px;
+}
+
+.h1 {
+    color:#5CADD3; 
+} 
+
+ /*--button "pour INFO"--*/  
+
+.btn1 {                        
+    border: none;
+    margin-top: -7px;
+    margin-left: 30px;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 3px;
+    border: 2px solid #5CADD3;
+    width: 111px;
+    cursor: pointer;
+    background-image: linear-gradient(to left,#12cbc4,#0652DD,#12CBC4); /*image de fond/pour effet avec background-size*/
+    background-size: 200%;                                                    /*pour agrandir image de fond*/
+    transition: background-image 0.6s ease-out;
+    transition: box-shadow 0.3s ease;
+    box-shadow: inset 1px 1px 45px 4px rgba(100, 100, 100, 0.9);
+    z-index: 5;
+}
+
+.btn1:hover {
+    background-position: right;                               /*faire envoyer les couleurs vers la droite*/
+    box-shadow: inset 1px 1px 26px 4px rgba(0, 0, 0, 0.95);
+     transform: translateY(3%);                               /*------pour descendre le button vers la bas  */
+}
+/*----END:BUTTON POUR INFO----*/
+
+/*---CHEVRON---*/
+
+.bouton-gauche {                                             /*--positionnement chevron--*/
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    top: 40%;
+    left: 0%;
+    padding: 36px 0 0 10px;
+    font-size: 18px;
+    color: white;
+}
+
+.bouton-droit {                                               /*--positionnement chevron--*/
+    position: absolute;
+    width: 30px;
+    height: 60px;
+    top: 40%;
+    right: 1px;
+    font-size: 18px;
+    color: white;
+    padding: 30px 0 0 30px;
+}
+
+.fa-solid .fa-chevron-right {                                /*--centrage chevron droit--*/
+    padding: 9px 0px 0px 6px;
+}
+
+.demi-cercle-G {                                              /*---demi cercle entourant le chevron--*/
+    border-bottom-right-radius: 88px;
+    border-top-right-radius: 88px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.demi-cercle-D {    
+    border-bottom-left-radius: 60px;
+    border-top-left-radius: 60px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+/*---CHEVRON---/*
+
+/*------------- START: services -----------------------------------------------------------------------*/
+
+#Services {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:white
+}
+
+.h2-serv {
+    display: flex;
+    text-transform: uppercase;
+    color: black;
+    font-size: 36px;
+    justify-content: center;
+    margin-bottom: 12px;
+    margin-top: 60px;
+    font-weight: bold;
+
+}
+
+/*--- START: rond bleu entre H et P---*/ 
+
+.line-blue {
+    display: flex;;
+    justify-content: center;;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.iconB {                  
+    color: #5CADD3;
+    font-size: 15px;
+    -webkit-animation: horizon 8s linear infinite;        /*----pour compatibilité navigateur----------*/
+    animation: horizon 8s linear infinite;                /*--animation sur 8 seconde,lineaire qui tourne en boucle---*/
+}
+@-webkit-keyframes horizon {
+    0% {
+        transform:translateX(0px)
+    }
+    25% {
+        transform:translateX(-350%)
+}
+    50% {
+        transform: translateX(0%);
+    }
+    75% {
+        transform: translateX(350%);
+    }
+
+    100% {
+        transform:translateX(0%)
+}          
+}
+@keyframes horizon {                                       /*deplacement point bleue de gauche a droite */
+    0% {
+        transform:translateX(0px)
+    }
+    25% {
+        transform:translateX(-350%)
+}
+    50% {
+        transform: translateX(0%);
+    }
+    75% {
+        transform: translateX(350%);
+    }
+
+    100% {
+        transform:translateX(0%)
+}                                      /*deplacement point bleue de gauche a droite */
+    0% {
+        transform:translateX(0px)
+    }
+    25% {
+        transform:translateX(-350%)
+}
+    50% {
+        transform: translateX(0%);
+    }
+    75% {
+        transform: translateX(350%);
+    }
+
+    100% {
+        transform:translateX(0%)
+}
+}
+/*-------------END: ROND BLEU---------*/
+
+/*-----start: ligne de part et d autre du rond bleu se deplacant horizontalement-----*/
+
+.line-G {
+    background-color:#bdc3c7 ;
+    width: 50px;
+    height: 1px;
+}
+
+.line-D {              
+    background-color:lightgrey;
+    width: 50px;
+    height: 1px;
+}
+/*-------END: ligne de part et d autre du rond bleu se deplacant horizontalement-----*/ 
+
+.P-serv {            /*-----centrage et police du paragraphe sous titre: SERVICE---*/
+    color: black;
+    text-align: center;
+    font-size: 15px;
+}
+
+.img-div-service {           /*-----div comportant IMG/ordi et icon et texte----*/      
+    position: relative;
+    display: flex;
+    align-items:center;
+    left: 0;
+    right: 0;
+    transform: translate(50% 50%); 
+    padding-left: 233px;
+    padding-top: 20px;
+}
+
+.img-div-service > img {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    padding: 0 0 44px 0;
+}
+
+.column-container {    /*div contenant colonnes icon et texte pour centrage en flex*/
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 0px 0px 62px;
+}
+
+.column-container h2 {
+    font-size: 18px;
+}
+
+.column-icon {          /*---pr centrer les cercles avec icon par rapport a img----*/
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 15px;
+    padding: 76px 0 0 0;
+}
+
+.column-icon i.circle:not(.fas.fa-circle.point-blue) {   /*pour centrer icon bleu ds cercles*/
+    font-size: 20px;    
+    display: flex;
+}
+
+.column-text {                        /*-----titre et texte aligné sur icon----*/
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 15px;
+    color: black;
+    margin: 0 197px 0 0;
+    gap: 18px;
+    padding: 68px 0 0 0 ;
+}
+.column-text > h2 {
+    font-weight: bold;
+    font-size: 17px;
+}
+.circle {                              /*-----contour autour des icon ----*/
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border: none;
+    font-size: 10px;
+    border-radius: 50%;
+    border: 2px #bdc3c7c4 solid;
+    color: #439ec8;
+    background-color:white;  
+    z-index: 4;
+}
+
+.point-blue {                                 /*---icon bleu qui tourne-----*/
+    position: absolute;
+    font-size: 12px;
+    color: #5CADD3;
+    z-index: 5;
+    animation:  rotate 8s linear infinite;
+    -webkit-animation:  rotate 8s linear infinite;
+}
+
+.align-point {                               /*----pour centrer les icon bleu qui tourne---*/
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px 35px 0px;
+}
+
+
+
+
+@-webkit-keyframes rotate {  
+        0% {
+           transform: rotate(0deg) translate(30px) rotate(0deg);
+        }
+       100% {
+           transform: rotate(360deg) translate(30px) rotate(360deg);
+   }
+}    
+
+@keyframes rotate {                                  
+     0% {
+        transform: rotate(0deg) translate(30px) rotate(0deg);
+    }  
+    100% {
+        transform: rotate(360deg) translate(30px) rotate(360deg);
+    }
+}
+
+/*------------- END: services -----------------------------------------------*/
+
+/*-------------START: NOS PROJETS -------------------------------------------*/
+
+#portfolio {                          /*caracteristique général*/
+position: relative;
+width: 100%;
+padding-top: 10px;
+background-color: #F5F5F5;
+padding-bottom: 35px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.conteneur {               /*----------regroupe ensemble h2/P/Menu/IMG-------------*/
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: #f4f3f3;
+    color: black;
+}
+
+.conteneur h2 {              /*-----reg espacement et taille police----*/
+    font-weight: bold;
+    padding-top: 40px;
+    font-size: 36px;
+}
+.conteneur .line-blue {     /*-----reg espacement point bleu ----*/
+    padding-top: 15px;
+
+}
+.conteneur p {             /*-----reg espacement et taille police  <P>----*/
+    text-align: center;
+    padding-top: 0px;
+    line-height: 30px;
+    font-size: 13px;
+    font-size: 15px;
+} 
+
+
+
+.menu-portfolio {                   /*-----centrage barre menu------*/ 
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;  
+    margin: 40px 0 0 0;
+}
+
+.menu-portfolio ul {                 /*---pour mettre menu à horizontale---------*/
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: #E5E5E5;
+    height: 42px; 
+    margin-top: 20px;
+}
+.menu-portfolio ul li a {         /*-----espace entre les rubriques de la nav barre----*/
+    position: relative;
+    padding: 10px 18px 10px 18px;
+    border-radius: 5px;
+
+}
+.menu-portfolio a {
+    color: black;
+}
+
+.menu-portfolio ul li a:hover {     /*---hover menu / caracteristique général--------*/
+    background-color: #5CADD3;
+    color: white;
+    box-shadow: 0 3px 0 #4C8FB0;
+    color: white;
+    /* box-shadow: 12px -7px 2px 0px #4C8FB0; */  /*---effet different avec ombre----*/
+    cursor: pointer;
+}
+
+
+.menu-portfolio ul li a:hover::after {   /*-----triangle bleu pour sous hover-----*/                 
+    position: absolute;
+    content: "";
+    bottom: -20px;                /*--mettre fleche sous le bloc--*/
+    left: 50%;                    
+    transform: translate(-50%);   /*--centrage flèche--*/
+    height: 0;
+    width: 0;
+    background-color: transparent;      
+    border-color: transparent;
+    border-top: #4C8FB0 solid 10px;
+    border-right: transparent solid 10px;
+    border-bottom: transparent solid 10px;
+    border-left: transparent solid 10px;
+}
+
+.tab-img {                     /*-------tableau des img---------*/
+display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 50px 0px 40px;
+}
+
+.tab-img figure {
+    position: relative;
+    width: 330px;
+    margin: 15px 0 15px 15px;
+}
+
+.tab-img img {
+    width: 100%;
+}
+
+.tab-img figcaption {
+    position: absolute;
+    left:0;
+    bottom: 0;
+    width: 100%;
+    height: 0;           /* pour effectuer la transition avec hover avec height 34%*/
+    color: white;
+    background-color: rgba(41,41,41,0.8);
+    -webkit-transition: 0.5s ease; 
+    opacity: 0;                      /* --pour le hover pour etre invisible--- */
+    transition: 0.5s ease;           
+}
+
+.text-caption p { /*----obligé mettre class pour enlever les heritage de la classe conteneur----*/
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 0px 0 17px;
+    font-size: 14px;
+    line-height: 0;
+}
+
+.fa-eye  {                       /*-----cercle avec fond bleu et oeil blanc----*/
+    position: absolute;
+    top: -23px;
+    right: 42px;
+    padding: 14px;
+    background-color: #5CADD3;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+figure:hover figcaption {    /*----hover pour figcaption*/
+    opacity: 1;              /*faire apparaitre figcaption qui etait a opacité 0*/
+    height: 34%;
+}
+
+
+/*-------------END: NOS PROJETS-----------------------------------------------*/
+/*-------------START: CONTACT-------------------------------------------------*/
+
+.conteneur-contact { 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 650px;
+    margin: 40px 0 0 0;
+} 
+
+.iframe-conteneur {                    /*--positionnement et dimmensionnement MAP--*/
+    position: relative;
+    width: 100%;
+    height:100%;    
+    margin: 40px 0 0 0;
+    background-color: lightblue;
+
+}
+
+iframe {                   /* POS-absolute pour z-index pour integration voile bleue*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.blue-filter {                    /*----voile bleu sur map----*/
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    background-color: lightblue;
+    opacity: 0.5;
+    pointer-events: none;   /*pour enlever les porpiété mise par le css pour faire fonctionner l iframe--*/
+    z-index: 2;
+}
+
+form {                         /*---formulaire-------*/
+    position: absolute;
+    top: 79px;
+    right: 0%;
+    left: 60%;
+    bottom: 5%;
+    width: 329px;
+    height: 500px;
+    color: black;
+    border: 2px solid darkgrey;
+    padding: 20px;
+    background-color: rgba(246, 245, 250, 0.452);
+    box-shadow: -1px 2px 24px 0px;
+    z-index: 3;
+}
+
+form h2 {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    padding: 13px 0px 23px 0px;
+}
+
+address {
+    padding: 20px;
+    font-style: normal;
+    font-size: 12.5px;
+    padding: 0 0 0 0 ;
+}
+
+address h2 {
+    font-weight: bold;
+    font-size: 15px;
+    padding: 0;
+}
+.case-form {
+    display: flex;
+    flex-direction: column;
+}
+.case-form div {
+    padding-top: 30px;
+}
+.case-form div input {
+    width: 100%;
+    height: 26px;
+    border-color: transparent;                /*---enlever couleur noir de la bordure---*/
+    box-shadow: -1px -1px 6px 4px darkgrey;
+}
+
+.case-form textarea {
+    width: 240px;
+    height: 150px;
+    box-shadow: -1px -1px 4px 2px darkgrey;
+}
+
+.case-form div input::placeholder {
+    color: black;
+    padding: 3px 0 0 3px;
+}
+
+textarea::placeholder {
+    color: black;
+    font-size: 14px;
+    padding: 3px 0 0 3px;   
+}
+
+
+.btn2 {
+    position: relative;
+    bottom: -12px;
+    width: 48%;
+    height: 35px;
+    color: #E5E5E5;
+    background-color: #5CADD3;
+    border: 2px solid #5CADD3;
+    box-shadow: 0 3px 11px black;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;        /*---pr enlever les bordures du btn----*/
+}
+
+.btn2:hover {
+    position: relative;
+    box-shadow: inset 0 0 #5CADD3;
+    transform: translateY(8%);       /* ------pour descendre le button vers la bas---*/
+}
+
+.case-form div input:focus {
+    caret-color: #5CADD3;          /*---pr changer la couleur du curseur avec l autofocus---*/
+    outline-color: #5CADD3;        /*-pr changer ma couleur des bordures avec l autofocus--*/ 
+}
+/*---------------------START: FOOTER------------------*/
+
+footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 479px;
+    justify-content: center;
+}
+
+footer p {
+    position: relative;
+    left: 30%;
+    font-size: 12px;
+}
+
+footer img {
+    width: 40px;
+    padding-right: 10px;
+}
+
+#footer-section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    font-size: 17px;
+    color: #333;
+    padding: 126px 0 100px;
+}
+
+#footer-section div h2 {
+    font-size: 30px;
+    padding-bottom: 30px;
+}
+
+.footer-info-pratiques {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-info-pratiques p {        /*--pour copyright--*/
+    position: absolute;
+    top: 280px;
+    left: -12px;
+}
+
+.mentions-légales a {
+    text-decoration: none;
+    color: inherit;      /*---enlever la couleur des liens <a>---*/
+    width: 100px;
+    height: 100px;
+    padding-right: 5px;
+}
+
+.mentions-légales a:hover {
+    color: rgb(3, 3, 3);
+}
+
+.footer-horaire li,
+.footer-reseaux li {
+    padding: 5px 0;
+}
+
+
+
+
+
+
+/*------------- START: integration responsive------------------- ------------*/
+
+/* -------------format ordi-------------------------------------------------- */
+@media screen and (max-width: 1024px) {
+    .general-page {
+        width: 90%;
+        font-size: 0.9em;
+    }
+}
+
+/* -------------format tablette ---------------------------------------------- */
+@media screen and (max-width: 767px) {
+    .general-page {
+        width: 90%;
+        font-size: 0.9em;
+    }
+}
+/* -------------format telephone ----------------------------------------------- */
+@media screen and (max-width: 480px) {
+    .general-page {
+        width: 90%;
+        font-size: 0.9em;
+    }
+}
+
+/* ---------------END: intégration responsive------------------------------------ */
