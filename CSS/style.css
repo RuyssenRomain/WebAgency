@@ -488,8 +488,16 @@ header {
 	/*-----espace entre les rubriques de la nav barre----*/
 	position: relative;
 	padding: 10px 18px 10px 18px;
-	border-radius: 5px;
 }
+.menu-portfolio ul:first-child {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.menu-portfolio ul:last-child {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
 .menu-portfolio a {
 	color: black;
 }
