@@ -32,17 +32,25 @@
         <!----------Start: accueil ----------------->
     <main>
         <section id="Accueil" class="section1">
-
-            <img src="./img/slider/bg1.jpg" alt="une fillette entrain de sourire"> <!-- commit/ alt modify-->
-
-            <a class="bouton-droit demi-cercle-D" href="./img/chevron-right-solid.svg" alt="chevron right">
-                <i class="fa-solid fa-chevron-right"></i>
-            </a>
-
-            <a  class="bouton-gauche demi-cercle-G" href="./img/chevron-left-solid.svg" alt="chevron left">
-                <i class="fa-solid fa-chevron-left"></i>
-            </a>
-
+            <div class="carousel-wrapper">
+                <input type="radio" id="img1" name="carousel" checked />
+                <input type="radio" id="img2" name="carousel" />
+    
+                <div class="carousel-img">
+                    <label for="img1" class="carousel-img">
+                        <img
+                            class="img-custom"
+                            src="./img/slider/bg1.jpg"
+                        />
+                    </label>
+                    <label for="img2" class="carousel-img">
+                        <img
+                            class="img-custom"
+                            src="./img/slider/bg2.jpg"
+                        />
+                    </label>
+                </div>
+            </div>
             <div class="slogan">
                 <h1>
                     <strong>
@@ -53,6 +61,17 @@
                     <br>
                     <button class="btn1">Plus d'info</button>
             </div>
+            <!-- <img src="./img/slider/bg1.jpg" alt="une fillette entrain de sourire">
+
+            <a class="bouton-droit demi-cercle-D" href="./img/chevron-right-solid.svg" alt="chevron right">
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+
+            <a  class="bouton-gauche demi-cercle-G" href="./img/chevron-left-solid.svg" alt="chevron left">
+                <i class="fa-solid fa-chevron-left"></i>
+            </a> -->
+
+           
                
         </section>
             
