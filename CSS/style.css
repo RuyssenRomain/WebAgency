@@ -14,7 +14,7 @@
 	max-width: 1920px;
 	background-color: white;
 	/* background-color: black;   ---pour travailler et voir les espaces-- */
-	margin: auto;
+	margin: 0 auto;
 }
 
 /*---------End: general-------------------------------------------------------------*/
@@ -31,7 +31,6 @@ header {
 	padding: 1.25em 0;
 	background-color: white;
 	z-index: 10;
-	box-shadow: inset 0px -1px 0 #c5c5c6;
 }
 /*-------Start: MENU---------*/
 
@@ -68,7 +67,7 @@ header {
 }
 
 .menu li:hover::after {
-	transform: scaleX(1);
+	transform: scaleX(1); /* pour prendre 100% de l espace lors du hover*/
 }
 
 .menu li a {
@@ -76,11 +75,7 @@ header {
 	padding: 0.75em;
 	color: #767676;
 }
-/* .menu li a:hover {
-	color: black;
-	border-top: 4px solid #5cadd3;
-	padding-top: 41px;
-} */
+
 /*------END: MENU------*/
 /*----------End: header/logo/menu------------------------------------------------*/
 
@@ -92,99 +87,89 @@ header {
 
 #Accueil {
 	display: flex;
+	justify-content: center;
 	padding-top: 100px;
 	position: relative;
+	margin: 0 auto;
 }
 
-.carousel-wrapper {
+.slider {
 	width: 100%;
+	height: 500px;
 	position: relative;
-	scroll-snap-type: x mandatory;
+	overflow: hidden;
 }
 
-.carousel-img {
-	display: flex;
-	transition: transform 0.7s ease-in-out;
-	z-index: -1;
-}
-
-.carousel-wrapper input[type="radio"]:nth-child(1):checked ~ .carousel-img {
-	transform: translateX(0);
-}
-
-.carousel-wrapper input[type="radio"]:nth-child(2):checked ~ .carousel-img {
-	transform: translateX(-1520px);
-}
-
-.carousel-wrapper input[type="radio"]:nth-child(1) {
-	position: absolute;
-	left: 0;
-	top: 50%;
-	margin-left: 50px;
-	z-index: 2;
-	width: 50px;
-	height: 40px;
-	transform: translate(-50%, -50%);
-}
-.carousel-wrapper input[type="radio"]:nth-child(2) {
-	position: absolute;
-	right: 0;
-	top: 50%;
-	padding: 10px;
-	z-index: 2;
-}
-
-.img-custom {
-	width: 100%;
-	object-fit: cover;
-	object-position: center;
-}
-
-.carousel-img {
-	scroll-snap-align: start;
-	flex: 0 0 100%;
+.slides {
+	width: 200%;
 	height: 100%;
+	display: flex;
+	transition: all 0.8s ease;
 }
-
-/* Styles pour les flèches semi-transparentes en demi-cercle noir */
-.carousel-img label::after {
-	content: "";
+#slide1 {
 	position: absolute;
 	top: 50%;
-	transform: translateY(-50%);
-	width: 20px;
-	height: 20px;
-	background-color: rgba(0, 0, 0, 0.5);
-	clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
-	cursor: pointer;
-	z-index: 3;
-}
-
-/* Styles pour la première flèche à gauche */
-.carousel-img label:first-child::after {
 	left: 0;
-	margin-left: -25px;
+	transform: translate(-50%, -50%);
+	width: 300px;
+	height: 200px;
+	z-index: 5;
+	opacity: 0;
 }
 
-/* Styles pour la deuxième flèche à droite */
-.carousel-img label:last-child::after {
-	right: 0;
-	margin-right: -25px;
-}
-
-/* Styles pour rendre les labels cliquables */
-.carousel-img label {
-	cursor: pointer;
-}
-/*------------------------ END : PARTI EN TRAITEMENT */
-/* Styles pour l'input radio */
-.carousel-img input[type="radio"] {
+#slide2 {
 	position: absolute;
 	top: 50%;
-	transform: translateY(-50%);
-	z-index: 4; /* Z-index supérieur pour l'input */
-	display: none; /* Pour le rendre invisible */
+	right: 0;
+	transform: translate(50%, -50%);
+	width: 300px;
+	height: 200px;
+	z-index: 5;
+	opacity: 0;
 }
+
+#slide1:checked ~ .slides {
+	transform: translateX(0%);
+}
+
+#slide2:checked ~ .slides {
+	transform: translateX(-50%);
+}
+
+.slide {
+	width: 50%;
+	position: relative;
+}
+
+.slide img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover; /* Pour s'assurer que les images couvrent toute la zone de la diapositive */
+}
+
+.content {
+	position: absolute;
+	top: 50%;
+	left: 25%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+h2,
+p {
+	color: white;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+button {
+	padding: 10px 20px;
+	border: none;
+	background: white;
+	color: black;
+}
+
+/*------------------------ END : PARTI EN TRAITEMENT */
 /*--parti texte-H-P-BU sur image*/
 
 .slogan {
@@ -255,23 +240,24 @@ header {
 	padding: 36px 0 0 10px;
 	font-size: 18px;
 	color: white;
+	z-index: 1;
 }
 
 .bouton-droit {
 	/*--positionnement chevron--*/
 	position: absolute;
 	width: 30px;
-	height: 60px;
-	top: 40%;
-	right: 1px;
+	top: 50%;
+	right: 0;
+	transform: translate(-50%, -50%);
 	font-size: 18px;
 	color: white;
-	padding: 30px 0 0 30px;
 }
 
 .fa-solid .fa-chevron-right {
 	/*--centrage chevron droit--*/
 	padding: 9px 0px 0px 6px;
+	z-index: 1;
 }
 
 .demi-cercle-G {
