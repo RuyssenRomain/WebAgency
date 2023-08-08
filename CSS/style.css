@@ -7,7 +7,7 @@
 /*--------Start: general---------------------------------------------------------*/
 
 #general-page {
-	font-family: Roboto, Arial, Helvetica, sans-serif;
+	font-family: "roboto", Arial, Helvetica, sans-serif; /*pratique courante pour nom de police a mots composé ici pas necessaire mais uniformisation pour la pratique*/
 	width: 100%;
 	color: #767676;
 	overflow: hidden;
@@ -51,6 +51,7 @@ header {
 
 .menu li {
 	position: relative;
+	margin-left: 20px;
 }
 .menu li::after {
 	/* pour creer le surlignage bleu */
@@ -100,12 +101,13 @@ header {
 	overflow: hidden;
 }
 
-.slides {
+.slider-container {
 	width: 200%;
 	height: 100%;
 	display: flex;
 	transition: all 0.8s ease;
 }
+
 #slide1 {
 	position: absolute;
 	top: 50%;
@@ -128,11 +130,11 @@ header {
 	opacity: 0;
 }
 
-#slide1:checked ~ .slides {
+#slide1:checked ~ .slider-container {
 	transform: translateX(0%);
 }
 
-#slide2:checked ~ .slides {
+#slide2:checked ~ .slider-container {
 	transform: translateX(-50%);
 }
 
@@ -144,69 +146,55 @@ header {
 .slide img {
 	width: 100%;
 	height: 100%;
-	display: block;
+	display: block; /*---premet eliminer potentielle espacement--*/
 	object-fit: cover; /* Pour s'assurer que les images couvrent toute la zone de la diapositive */
 }
 
-.content {
-	position: absolute;
-	top: 50%;
-	left: 25%;
-	transform: translate(-50%, -50%);
-	text-align: center;
-}
-
-h2,
-p {
-	color: white;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-button {
-	padding: 10px 20px;
-	border: none;
-	background: white;
-	color: black;
-}
-
 /*------------------------ END : PARTI EN TRAITEMENT */
-/*--parti texte-H-P-BU sur image*/
+
+/*--parti texte-H-P-Btn sur image*/
 
 .slogan {
 	position: absolute;
-	width: 38%;
+	width: 40%;
 	left: 14%;
-	bottom: 39%;
+	top: 21%;
 	color: white;
 	font-size: 16px;
 }
+.slogan strong {
+	color: #5cadd3;
+}
 .slogan h1 {
-	font-size: 36px;
+	font-size: 38px;
 	text-transform: uppercase; /*majuscule:*/
 	color: white;
-	margin: 30px 30px 35px 30px;
+	font-weight: bold;
+	margin: 31px 0;
+}
+
+.slogan h2 {
+	font-size: 38px;
+	text-transform: uppercase; /*majuscule:*/
+	color: white;
+	font-weight: bold;
+	margin: 31px 0;
 }
 .slogan p {
 	font-family: "Roboto", Arial, sans-serif;
-	padding-left: 30px;
+	margin: 14px 0;
 	font-size: 14px;
-}
-
-.h1 {
-	color: #5cadd3;
 }
 
 /*--button "pour INFO"--*/
 
 .btn1 {
 	border: none;
-	margin-top: -7px;
-	margin-left: 30px;
 	color: white;
-	padding: 8px 15px;
+	padding: 10px 18px;
 	border-radius: 3px;
 	border: 2px solid #5cadd3;
-	width: 111px;
+	width: 128px;
 	cursor: pointer;
 	background-image: linear-gradient(
 		to left,
