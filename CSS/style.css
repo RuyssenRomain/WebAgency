@@ -76,6 +76,42 @@ header {
 	padding: 0.75em;
 	color: #767676;
 }
+/*----START : BURGER MENU----------------*/
+.burger {
+	position: relative;
+	cursor: pointer;
+}
+.burger__label {
+	display: block;
+	width: 30px;
+	height: 24px;
+}
+.burger__btn-bar {
+	width: 100%;
+	height: 2px;
+	background-color: #333;
+	margin: 5px 0; /*espace entre les barres*/
+}
+.burger__btn-toggle:checked ~ .burger__label .bar-horizontal {
+	opacity: 0;
+}
+.burger__btn-toggle:checked ~ .burger__label .bar-diagonal.diagonal-2 {
+	transform: rotate(-45deg) translateY(-10px);
+}
+.burger__btn-toggle:checked ~ .burger__label .bar-diagonal.diagonal-1 {
+	transform: rotate(45deg) translateY(5px);
+}
+
+/*----END : BURGER MENU----------------*/
+/* -------------format tablette ----------------------------------------------- */
+@media screen and (max-width: 767px) {
+	.menu {
+		display: none;
+	}
+}
+/* effets de basculement */
+.burger
+/* ---------------END: intégration responsive------------------------------------ */
 
 /*------END: MENU------*/
 /*----------End: header/logo/menu------------------------------------------------*/
@@ -891,26 +927,26 @@ footer img {
 /*------------- START: integration responsive------------------- ------------*/
 
 /* -------------format ordi-------------------------------------------------- */
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
 	.general-page {
 		width: 90%;
 		font-size: 0.9em;
 	}
-}
+} */
 
 /* -------------format tablette ---------------------------------------------- */
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
 	.general-page {
 		width: 90%;
 		font-size: 0.9em;
 	}
-}
+} */
 /* -------------format telephone ----------------------------------------------- */
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
 	.general-page {
 		width: 90%;
 		font-size: 0.9em;
 	}
-}
+} */
 
 /* ---------------END: intégration responsive------------------------------------ */
