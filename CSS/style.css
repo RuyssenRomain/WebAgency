@@ -76,49 +76,78 @@ header {
 	padding: 0.75em;
 	color: #767676;
 }
-/*----START : BURGER MENU----------------*/
-.burger {
-	display: flex;
-	position: relative;
-	cursor: pointer;
-}
-.burger__btn-toggle {
+#btn-toggle {
+	position: absolute;
+	top: 0;
 	opacity: 0;
 }
-.burger__label {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 40px;
-	height: 40px;
-}
-.burger__btn-bar {
-	width: 100%;
-	height: 4px;
-	background-color: #333;
-	margin: 3px 0; /*espace entre les barres*/
-	transition: 0.3s ease-out;
-}
-
-/*----END : BURGER MENU----------------*/
 /* -------------format tablette ----------------------------------------------- */
 @media screen and (max-width: 767px) {
 	.menu {
 		display: none;
 	}
-}
-/* effets de basculement */
-.burger__btn-toggle:checked ~ .burger__label .bar-horizontal {
-	opacity: 0;
-}
-.burger__btn-toggle:checked ~ .burger__label .bar-diagonal.diagonal-2 {
-	transform-origin: bottom left;
-	transform: rotate(-45deg) translate(1px, 8px);
-}
-.burger__btn-toggle:checked ~ .burger__label .bar-diagonal.diagonal-1 {
-	transform-origin: top;
-	transform: rotate(45deg) translate(9px, 7px);
+	/*----START : BURGER MENU----------------*/
+
+	.burger {
+		height: 3.9rem;
+		width: 4rem;
+		z-index: 5;
+		margin-right: 15px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	#btn-toggle {
+		opacity: 0;
+	}
+	.burger__label {
+		display: flex;
+		position: relative;
+		height: 3rem;
+		width: 100%;
+		cursor: pointer;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.burger__btn-bar {
+		/* traits noir */
+		position: absolute;
+		width: 100%;
+		height: 0.25rem;
+		top: 50%;
+		margin-top: -0.1rem;
+		left: 0;
+		display: block;
+		background: #333;
+		transition: 0.3s;
+	}
+	.burger__btn-bar:first-child {
+		transform: translateY(-20px);
+	}
+	.burger__btn-bar:last-child {
+		transform: translateY(20px);
+	}
+	/* effets de basculement traits noir */
+	.burger__btn-toggle:checked ~ .burger__label div {
+		opacity: 0;
+	}
+
+	.burger__btn-toggle:checked ~ .burger__label .bar-diagonal.diagonal-2 {
+		opacity: 1;
+		/* transform-origin: bottom left; */
+		/* transform: translate(13px, 23px) rotateZ(-411deg); */
+		transform: rotate(405deg);
+	}
+	.burger__btn-toggle:checked ~ .burger__label .bar-diagonal.diagonal-1 {
+		opacity: 1;
+		transform: rotate(-405deg);
+		/* transform-origin: top; */
+		/* transform: translate(3px, 0px) rotateZ(411deg); */
+	}
+
+	/*----END : BURGER MENU----------------*/
 }
 
 /* ---------------END: intégration responsive------------------------------------ */
