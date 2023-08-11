@@ -45,7 +45,7 @@ header {
 	background-color: white;
 	margin: 0 1em;
 }
-nav {
+.div-header nav {
 	position: absolute;
 	right: 0;
 	z-index: 9;
@@ -62,7 +62,7 @@ nav {
 	/* pour creer le surlignage bleu */
 	content: "";
 	position: absolute;
-	top: -2.6rem;
+	top: -2.65rem;
 	left: 0;
 	width: 95%;
 	height: 4px;
@@ -99,7 +99,7 @@ nav {
 .burger__label {
 	display: flex;
 	position: relative;
-	height: 2.5rem;
+	height: 1.5rem;
 	width: 100%;
 	cursor: pointer;
 	flex-direction: column;
@@ -111,19 +111,18 @@ nav {
 	/* traits noir */
 	position: absolute;
 	width: 100%;
-	height: 0.2rem;
+	height: 0.18rem;
 	top: 50%;
-	margin-top: -0.1rem;
 	left: 0;
 	display: block;
 	background: #333;
-	transition: 0.3s;
+	transition: 0.3s ease-in-out;
 }
 .burger__btn-bar:first-child {
-	transform: translateY(-13px);
+	transform: translateY(-10px);
 }
 .burger__btn-bar:last-child {
-	transform: translateY(13px);
+	transform: translateY(10px);
 }
 /*-- START :effets de basculement au click : traits noir --*/
 .burger__btn-toggle:checked ~ .burger__label div {
@@ -152,12 +151,50 @@ nav {
 /* -------------format tablette ----------------------------------------------- */
 @media screen and (max-width: 767px) {
 	.menu {
+		position: fixed;
+		width: 300px;
+		height: 40%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: #5cadd3;
+		padding-top: 6rem;
+		top: 0;
+		right: 0;
+		z-index: 11;
+		box-shadow: -4px 6px 5px 1px rgba(0, 0, 0, 0.15);
+	}
+	
+	
+	}
+	.menu li {
+		width: 100%;
+		margin-left: 0;
+	}
+	.menu li::after {
 		display: none;
+	}
+	.menu li a {
+		justify-content: center;
+		padding: 15px;
+		font-size: 18px;
+		box-shadow: 0 1px 0 rgba(98, 130, 164, 0.838) inset;
+		display: flex;
+	}
+	.menu li a:hover {
+		padding: 19px;
+		font-size: 24px;
+		/* box-shadow: 0 1px 0 rgba(98, 130, 164, 0.838) inset; */
+		cursor: pointer;
+		box-shadow: 0 -5px 0px white inset;
+		transition: 0.3s ease-in-out;
 	}
 	.burger .burger__btn-toggle,
 	.burger__label,
 	.burger__btn-bar {
 		display: block;
+	}
+	.div-header nav {
 	}
 }
 /*----START : BURGER MENU----------------*/
@@ -176,7 +213,7 @@ nav {
 #Accueil {
 	display: flex;
 	justify-content: center;
-	padding-top: 100px;
+	padding-top: 5rem;
 	position: relative;
 	margin: 0 auto;
 }
