@@ -46,9 +46,8 @@ header {
 	margin: 0 1em;
 }
 .div-header nav {
-	position: absolute;
-	right: 0;
-	z-index: 9;
+	display: flex;
+	align-items: center;
 }
 .menu {
 	display: flex;
@@ -141,6 +140,7 @@ header {
 }
 /*---- END: effets de basculement au click : traits noir ---*/
 
+.burger,
 .burger .burger__btn-toggle,
 .burger__label,
 .burger__btn-bar {
@@ -150,19 +150,42 @@ header {
 
 /* -------------format tablette ----------------------------------------------- */
 @media screen and (max-width: 767px) {
-	.menu {
+	header {
+		display: flex;
 		position: fixed;
-		width: 300px;
-		height: 40%;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 118px;
+		/* padding: 1.25em 0; */
+		background-color: white;
+		z-index: 10;
+	}
+	.div-header {
+		position: relative;
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		align-items: center;
-		background-color: #5cadd3;
-		padding-top: 6rem;
+		width: 100%;
+		height: 100%;
+		z-index: 10;
+		/* background-color: white; */
+		margin: 0 1em;
+	}
+	.div-header nav {
+		padding-top: 11px;
+	}
+	.menu {
+		position: relative;
+		width: 100%;
 		top: 0;
 		right: 0;
 		z-index: 11;
+		background-color: rgba(255, 255, 255, 0.25);
+		backdrop-filter: blur(15px);
 		box-shadow: -4px 6px 5px 1px rgba(0, 0, 0, 0.15);
+		justify-content: center;
 	}
 
 	.menu li {
@@ -170,29 +193,47 @@ header {
 		margin-left: 0;
 	}
 	.menu li::after {
-		display: none;
+		content: ""; /* pour creer le surlignage bleu */
+		content: "";
+		position: absolute;
+		top: -2.65rem;
+		left: 0;
+		width: 95%;
+		height: 4px;
+		transform: scaleX(0);
+		transition: transform 0.3s ease-in-out;
+		background: #5cadd3;
+		transform-origin: center;
 	}
 	.menu li a {
 		justify-content: center;
 		padding: 15px;
 		font-size: 18px;
-		box-shadow: 0 1px 0 rgba(98, 130, 164, 0.838) inset;
 		display: flex;
 	}
 	.menu li a:hover {
 		padding: 19px;
 		font-size: 24px;
-		/* box-shadow: 0 1px 0 rgba(98, 130, 164, 0.838) inset; */
 		cursor: pointer;
 		box-shadow: 0 -5px 0px white inset;
 		transition: 0.3s ease-in-out;
 	}
+
 	.burger .burger__btn-toggle,
 	.burger__label,
 	.burger__btn-bar {
 		display: block;
 	}
-	.div-header nav {
+	.burger {
+		position: absolute;
+		top: 9px;
+		right: 31px;
+		height: 3.9rem;
+		width: 4rem;
+		z-index: 5;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 }
 /*----START : BURGER MENU----------------*/
