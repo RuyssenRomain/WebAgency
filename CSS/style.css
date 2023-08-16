@@ -83,14 +83,6 @@ header {
 	transition: transform 0.3s ease-in-out;
 }
 
-.burger {
-	height: 3.9rem;
-	width: 4rem;
-	z-index: 5;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
 #btn-toggle {
 	opacity: 0;
 }
@@ -98,12 +90,13 @@ header {
 .burger__label {
 	display: flex;
 	position: relative;
-	height: 1.5rem;
-	width: 100%;
 	cursor: pointer;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	height: 2.9rem;
+	width: 4rem;
+	display: flex;
 }
 
 .burger__btn-bar {
@@ -114,7 +107,7 @@ header {
 	top: 50%;
 	left: 0;
 	display: block;
-	background: #333;
+	background: #4791ba;
 	transition: 0.3s ease-in-out;
 }
 .burger__btn-bar:first-child {
@@ -140,12 +133,12 @@ header {
 }
 /*---- END: effets de basculement au click : traits noir ---*/
 
-.burger,
-.burger .burger__btn-toggle,
-.burger__label,
-.burger__btn-bar {
+.burger__btn-toggle,
+.burger__label {
 	display: none;
+	opacity: 0;
 }
+
 /*----END : BURGER MENU----------------*/
 
 /* -------------format tablette ----------------------------------------------- */
@@ -156,7 +149,7 @@ header {
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		height: 118px;
+		height: 3rem;
 		/* padding: 1.25em 0; */
 		background-color: white;
 		z-index: 10;
@@ -164,8 +157,7 @@ header {
 	.div-header {
 		position: relative;
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		justify-content: flex-start;
 		align-items: center;
 		width: 100%;
 		height: 100%;
@@ -173,33 +165,54 @@ header {
 		/* background-color: white; */
 		margin: 0 1em;
 	}
+
 	.div-header nav {
-		padding-top: 11px;
-	}
-	.menu {
-		position: relative;
+		/* padding-top: 11px; */
+		display: flex;
+		position: absolute;
+		/* position: fixed; */
 		width: 100%;
-		top: 0;
-		right: 0;
-		z-index: 11;
+		height: 83px;
+		/* top: 0; */
+		/* right: 0; */
+		align-items: center;
+	}
+
+	.menu {
+		display: flex;
+
+		position: fixed;
+		width: 95%;
+		height: 4rem;
+		top: 88px;
+		transform: scale(0);
 		background-color: rgba(255, 255, 255, 0.25);
 		backdrop-filter: blur(15px);
-		box-shadow: -4px 6px 5px 1px rgba(0, 0, 0, 0.15);
+		box-shadow: 0px 1px 7px 3px rgba(0, 0, 0, 0.15);
+		flex-direction: row;
 		justify-content: center;
+		align-items: center;
+		transition: navbar-animate 0.5s ease-in-out;
+	}
+
+	.burger__btn-toggle:checked ~ .menu {
+		top: 88px;
+		transform: scale(1);
+		transition: 0.5s ease-in-out;
 	}
 
 	.menu li {
 		width: 100%;
-		margin-left: 0;
+		margin-left: 8px;
 	}
+
 	.menu li::after {
-		content: ""; /* pour creer le surlignage bleu */
 		content: "";
 		position: absolute;
-		top: -2.65rem;
+		top: 2.35rem;
 		left: 0;
 		width: 95%;
-		height: 4px;
+		height: 2px;
 		transform: scaleX(0);
 		transition: transform 0.3s ease-in-out;
 		background: #5cadd3;
@@ -211,29 +224,31 @@ header {
 		font-size: 18px;
 		display: flex;
 	}
+
 	.menu li a:hover {
-		padding: 19px;
+		padding: 8px;
 		font-size: 24px;
 		cursor: pointer;
-		box-shadow: 0 -5px 0px white inset;
 		transition: 0.3s ease-in-out;
 	}
 
-	.burger .burger__btn-toggle,
-	.burger__label,
-	.burger__btn-bar {
+	.burger__label {
 		display: block;
+		opacity: 1;
 	}
-	.burger {
+
+	.burger__label {
 		position: absolute;
-		top: 9px;
-		right: 31px;
+		top: 0;
+		transform: translate(-50%, 12%);
+		right: 0;
+		cursor: pointer;
+		/* flex-direction: row; */
+		/* justify-content: center; */
+		/* align-items: center; */
 		height: 3.9rem;
-		width: 4rem;
-		z-index: 5;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		width: 3rem;
+		transition: 0.5s ease-in-out;
 	}
 }
 /*----START : BURGER MENU----------------*/
