@@ -178,7 +178,6 @@ header {
 		width: 95%;
 		height: 4rem;
 		top: 88px;
-		transform: scale(0);
 		background-color: rgba(255, 255, 255, 0.25);
 		backdrop-filter: blur(15px); /*--effet de flou--*/
 		box-shadow: 0px 1px 7px 3px rgba(0, 0, 0, 0.15);
@@ -186,13 +185,15 @@ header {
 		justify-content: center;
 		align-items: center;
 		border-radius: 5px;
-		transition: 0.5s ease-in-out;
+		transition: opacity 0.45s linear, visibility 0.45s linear;
+		visibility: hidden; /*pour eviter que l'element soit cliquable en parti caché*/
+		opacity: 0;
 	}
 
 	.burger__btn-toggle:checked ~ .menu {
-		top: 88px;
-		transform: scale(1);
-		transition: 0.5s ease-in-out;
+		/*effet fondu avec apparition menu*/
+		visibility: visible;
+		opacity: 1;
 	}
 
 	.menu li {
