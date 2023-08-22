@@ -176,10 +176,10 @@ header {
 		display: flex;
 		position: fixed;
 		width: 95%;
-		height: 4rem;
+		height: clamp(0.5rem, 9.8vw, 3.5rem);
 		top: 88px;
-		background-color: rgba(255, 255, 255, 0.25);
-		backdrop-filter: blur(15px); /*--effet de flou--*/
+		background-color: rgb(255 255 255 / 49%);
+		backdrop-filter: blur(10px); /*--effet de flou--*/
 		box-shadow: 0px 1px 7px 3px rgba(0, 0, 0, 0.15);
 		flex-direction: row;
 		justify-content: center;
@@ -245,6 +245,11 @@ header {
 		transition: 0.5s ease-in-out;
 	}
 }
+@media screen and (max-width: 474px) {
+	.burger__label {
+		width: clamp(1.8rem, 1vw, 3rem);
+	}
+}
 /*----END : INTEGRATION RESPONSIVE FORMAT TABLETTE HEADER----------------*/
 
 /*----------End: header/logo/menu------------------------------------------------*/
@@ -281,8 +286,8 @@ header {
 	top: 50%;
 	left: 0;
 	transform: translate(-50%, -50%);
-	width: 300px;
-	height: 200px;
+	width: clamp(50px, 16vw, 300px);
+	height: clamp(80px, 24vw, 150px);
 	z-index: 5;
 	opacity: 0; /* opacity pour garder la fonction clickable*/
 }
@@ -292,8 +297,8 @@ header {
 	top: 50%;
 	right: 0;
 	transform: translate(50%, -50%);
-	width: 300px;
-	height: 200px;
+	width: clamp(50px, 16vw, 300px);
+	height: clamp(80px, 24vw, 150px);
 	z-index: 5;
 	opacity: 0;
 }
@@ -324,36 +329,41 @@ header {
 .slogan {
 	position: absolute;
 	width: 40%;
-	left: 12%;
-	top: 21%;
+	left: clamp(41px, 10vw, 178px);
+	top: clamp(6%, 9vw, 19%);
 	color: white;
 	font-size: 16px;
+}
+.slogan-position {
+	/* pour repositionner texte un peu en dessous pour 2eme img*/
+	top: clamp(5%, 9vw, 12%);
 }
 .slogan strong {
 	color: #5cadd3;
 }
 .slogan h1 {
 	font-size: clamp(
-		16px,
-		3.8vw,
+		10px,
+		3vw,
 		38px
 	); /*texte responsive 16 valeur min/ 3.8vw valeur préféré/ 38px valeur max*/
 	text-transform: uppercase; /*majuscule:*/
 	color: white;
 	font-weight: bold;
-	margin: 31px 0;
+	margin-top: clamp(0px, 2.1vw, 31px);
 }
 
 .slogan h2 {
-	font-size: clamp(16px, 3.8vw, 38px);
+	font-size: clamp(10px, 3vw, 38px);
 	text-transform: uppercase;
 	color: white;
 	font-weight: bold;
-	margin: 31px 0;
+	margin-top: clamp(0px, 2.1vw, 31px);
 }
 .slogan p {
 	font-family: "Roboto", Arial, sans-serif;
-	margin: 14px 0;
+	/* margin: 14px 0; */
+	margin-top: clamp(0px, 4vw, 34px);
 	font-size: clamp(12px, 1.5vw, 14px);
 }
 
@@ -362,10 +372,11 @@ header {
 .btn1 {
 	border: none;
 	color: white;
-	padding: 10px 18px;
+	padding: clamp(4px, 1vw, 10px);
+	margin-top: clamp(3px, 2vw, 14px);
 	border-radius: 3px;
 	border: 2px solid #5cadd3;
-	width: 128px;
+	width: clamp(80px, 21vw, 128px);
 	cursor: pointer;
 	background-image: linear-gradient(
 		to left,
@@ -392,8 +403,8 @@ header {
 .bouton-gauche {
 	/*--positionnement chevron--*/
 	position: absolute;
-	width: 40px;
-	height: 60px;
+	width: clamp(15px, 4.8vw, 40px);
+	height: clamp(20px, 4.8vw, 60px);
 	top: 50%;
 	left: 0%;
 	padding: 19px 10px 19px 0px;
@@ -407,8 +418,8 @@ header {
 .bouton-droit {
 	/*--positionnement chevron--*/
 	position: absolute;
-	width: 40px;
-	height: 60px;
+	width: clamp(15px, 4.8vw, 40px);
+	height: clamp(20px, 4.8vw, 60px);
 	top: 50%;
 	right: 0;
 	padding: 19px 0 19px 10px;
@@ -435,27 +446,58 @@ header {
 /*------------------------ END : SLIDER------- */
 /*----START : INTEGRATION RESPONSIVE FORMAT TABLETTE accueil----------------*/
 @media screen and (max-width: 1036px) {
-	.slogan {
-	}
 	.slogan h1 {
+		margin-top: clamp(0px, 1vw, 25px);
 	}
 
-	.bouton-gauche {
-	}
 	.btn1 {
+		margin-top: clamp(2px, 1vw, 5px);
 	}
 	.slogan h2 {
+		margin-top: clamp(0px, 1vw, 25px);
 	}
 	.slogan p {
-	}
-}
-@media screen and (max-width: 529px) {
-	.demi-cercle-G {
-	}
-	.demi-cercle-D {
+		margin-top: clamp(0px, -2.4 + 2488px, 45px);
 	}
 }
 
+@media screen and (max-width: 767px) {
+	.slogan h1 {
+		margin: 0;
+	}
+	.slogan p {
+		margin-top: 8px;
+	}
+	.btn1 {
+		margin: top 3px;
+	}
+}
+@media screen and (max-width: 474px) {
+	.slogan {
+		top: 11%;
+	}
+	.slogan-position {
+		top: 6%;
+	}
+	.slogan h1 {
+		margin: 0;
+	}
+	.slogan p {
+		margin-top: 2px;
+	}
+	.btn1 {
+		margin: top 3px;
+	}
+	.menu li a {
+		font-size: clamp(13px, 0.5vw, 23px);
+	}
+	.menu li a:hover {
+		padding: 8px;
+		font-size: 23px;
+		cursor: pointer;
+		transition: 0.3s ease-in-out;
+	}
+}
 /*----END : INTEGRATION RESPONSIVE FORMAT TABLETTE accueil----------------*/
 
 /*------------- START: services -----------------------------------------------------------------------*/
