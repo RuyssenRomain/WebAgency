@@ -61,7 +61,7 @@ header {
 	/* pour creer le surlignage bleu */
 	content: "";
 	position: absolute;
-	top: -2.65rem;
+	top: -2.55rem;
 	left: 0;
 	width: 95%;
 	height: 4px;
@@ -76,7 +76,7 @@ header {
 }
 
 .menu li a {
-	font-size: 17px;
+	font-size: 20px; /* text responsive 17 valeur min * 2vw valeur préféré et 20px valeur max*/
 	font-weight: 550;
 	padding: 0.75em;
 	color: hsl(207.14deg 4.98% 28.2% / 66%);
@@ -143,7 +143,7 @@ header {
 /*----END : BURGER MENU----------------*/
 
 /* ------------- START : format tablette HEADER ----------------------------------------------- */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 798px) {
 	header {
 		display: flex;
 		position: fixed;
@@ -185,14 +185,14 @@ header {
 		justify-content: center;
 		align-items: center;
 		border-radius: 5px;
-		transition: opacity 0.45s linear;
+		transition: opacity 0.45s ease-in-out, visibility 0s ease-in-out;
 		visibility: hidden; /*pour eviter que l'element soit cliquable en parti caché*/
 		opacity: 0;
 	}
 
 	.burger__btn-toggle:checked ~ .menu {
 		/*effet fondu avec apparition menu*/
-		transition: opacity 0.45s linear, visibility 0.45s linear;
+		transition: opacity 0.45s ease-in-out, visibility 0.3s ease-in-out;
 		visibility: visible;
 		opacity: 1;
 	}
@@ -237,7 +237,7 @@ header {
 	.burger__label {
 		position: absolute;
 		top: 0;
-		transform: translate(-50%, 18%);
+		transform: translate(-50%, 13%);
 		right: 0;
 		cursor: pointer;
 		height: 3.9rem;
@@ -265,7 +265,6 @@ header {
 
 .slider {
 	width: 100%;
-	height: 500px;
 	position: relative;
 	overflow: hidden;
 }
@@ -276,7 +275,7 @@ header {
 	display: flex;
 	transition: all 0.8s ease;
 }
-
+/* START :positionnement input en cacher pour effet de click sur chevron*/
 #slide1 {
 	position: absolute;
 	top: 50%;
@@ -285,7 +284,7 @@ header {
 	width: 300px;
 	height: 200px;
 	z-index: 5;
-	opacity: 0;
+	opacity: 0; /* opacity pour garder la fonction clickable*/
 }
 
 #slide2 {
@@ -298,6 +297,7 @@ header {
 	z-index: 5;
 	opacity: 0;
 }
+/* END :positionnement input en cacher pour effet de click sur chevron*/
 
 #slide1:checked ~ .slider-container {
 	transform: translateX(0%);
@@ -324,7 +324,7 @@ header {
 .slogan {
 	position: absolute;
 	width: 40%;
-	left: 14%;
+	left: 12%;
 	top: 21%;
 	color: white;
 	font-size: 16px;
@@ -333,7 +333,11 @@ header {
 	color: #5cadd3;
 }
 .slogan h1 {
-	font-size: 38px;
+	font-size: clamp(
+		16px,
+		3.8vw,
+		38px
+	); /*texte responsive 16 valeur min/ 3.8vw valeur préféré/ 38px valeur max*/
 	text-transform: uppercase; /*majuscule:*/
 	color: white;
 	font-weight: bold;
@@ -341,8 +345,8 @@ header {
 }
 
 .slogan h2 {
-	font-size: 38px;
-	text-transform: uppercase; /*majuscule:*/
+	font-size: clamp(16px, 3.8vw, 38px);
+	text-transform: uppercase;
 	color: white;
 	font-weight: bold;
 	margin: 31px 0;
@@ -350,7 +354,7 @@ header {
 .slogan p {
 	font-family: "Roboto", Arial, sans-serif;
 	margin: 14px 0;
-	font-size: 14px;
+	font-size: clamp(12px, 1.5vw, 14px);
 }
 
 /*--button "pour INFO"--*/
@@ -392,10 +396,12 @@ header {
 	height: 60px;
 	top: 50%;
 	left: 0%;
-	padding: 36px 0 0 10px;
+	padding: 19px 10px 19px 0px;
 	font-size: 18px;
 	color: white;
-	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .bouton-droit {
@@ -405,21 +411,12 @@ header {
 	height: 60px;
 	top: 50%;
 	right: 0;
-	padding: 36px 0 0 10px;
+	padding: 19px 0 19px 10px;
 	font-size: 18px;
 	color: white;
-}
-
-.fa-chevron-right {
-	/*--centrage chevron droit--*/
-	padding: 4px 0px 0px 14px;
-	z-index: 1;
-}
-
-.fa-chevron-left {
-	/*--centrage chevron gauche--*/
-	padding: 4px 0px 0px 0px;
-	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .demi-cercle-G {
@@ -436,6 +433,30 @@ header {
 /*---CHEVRON---*/
 
 /*------------------------ END : SLIDER------- */
+/*----START : INTEGRATION RESPONSIVE FORMAT TABLETTE accueil----------------*/
+@media screen and (max-width: 1036px) {
+	.slogan {
+	}
+	.slogan h1 {
+	}
+
+	.bouton-gauche {
+	}
+	.btn1 {
+	}
+	.slogan h2 {
+	}
+	.slogan p {
+	}
+}
+@media screen and (max-width: 529px) {
+	.demi-cercle-G {
+	}
+	.demi-cercle-D {
+	}
+}
+
+/*----END : INTEGRATION RESPONSIVE FORMAT TABLETTE accueil----------------*/
 
 /*------------- START: services -----------------------------------------------------------------------*/
 
