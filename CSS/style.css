@@ -185,13 +185,14 @@ header {
 		justify-content: center;
 		align-items: center;
 		border-radius: 5px;
-		transition: opacity 0.45s linear, visibility 0.45s linear;
+		transition: opacity 0.45s linear;
 		visibility: hidden; /*pour eviter que l'element soit cliquable en parti caché*/
 		opacity: 0;
 	}
 
 	.burger__btn-toggle:checked ~ .menu {
 		/*effet fondu avec apparition menu*/
+		transition: opacity 0.45s linear, visibility 0.45s linear;
 		visibility: visible;
 		opacity: 1;
 	}
