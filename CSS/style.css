@@ -150,7 +150,7 @@ header {
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		height: 3rem;
+		height: clamp(2rem, 1vw, 3rem);
 		background-color: white;
 		z-index: 10;
 	}
@@ -177,8 +177,9 @@ header {
 		position: fixed;
 		width: 95%;
 		height: clamp(0.5rem, 9.8vw, 3.5rem);
-		top: 88px;
+		top: 80px;
 		background-color: rgb(255 255 255 / 49%);
+		-webkit-backdrop-filter: blur(10px);
 		backdrop-filter: blur(10px); /*--effet de flou--*/
 		box-shadow: 0px 1px 7px 3px rgba(0, 0, 0, 0.15);
 		flex-direction: row;
@@ -321,6 +322,7 @@ header {
 	width: 100%;
 	height: 100%;
 	display: block; /*---premet eliminer potentielle espacement--*/
+	-o-object-fit: cover;
 	object-fit: cover; /* Pour s'assurer que les images couvrent toute la zone de la diapositive */
 }
 
@@ -336,7 +338,7 @@ header {
 }
 .slogan-position {
 	/* pour repositionner texte un peu en dessous pour 2eme img*/
-	top: clamp(5%, 9vw, 12%);
+	top: clamp(5%, 9vw, 21%);
 }
 .slogan strong {
 	color: #5cadd3;
@@ -484,6 +486,7 @@ header {
 	}
 	.slogan p {
 		margin-top: 2px;
+		font-size: 10px;
 	}
 	.btn1 {
 		margin: top 3px;
@@ -515,11 +518,10 @@ header {
 	display: flex;
 	text-transform: uppercase;
 	color: black;
-	font-size: 36px;
+	font-size: clamp(12px, 4vw, 36px);
 	justify-content: center;
-	margin-bottom: 12px;
-	margin-top: 60px;
-	font-weight: bold;
+	margin-bottom: clamp(5px, 1vw, 12px);
+	margin-top: clamp(5px, 4vw, 60px);
 }
 
 /*--- START: rond bleu entre H et P---*/
@@ -528,66 +530,31 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-bottom: 12px;
+	width: 50%;
+	margin: 0 auto 12px auto;
 }
 
 .iconB {
 	color: #5cadd3;
 	font-size: 15px;
-	-webkit-animation: horizon 8s linear infinite; /*----pour compatibilité navigateur----------*/
-	animation: horizon 8s linear infinite; /*--animation sur 8 seconde,lineaire qui tourne en boucle---*/
+	-webkit-animation: rotate-service 4s linear infinite; /*----pour compatibilité navigateur----------*/
+	animation: rotate-service 4s linear infinite; /*--animation sur 4 seconde,lineaire qui tourne en boucle---*/
 }
-@-webkit-keyframes horizon {
-	0% {
-		transform: translateX(0px);
-	}
-	25% {
-		transform: translateX(-350%);
-	}
-	50% {
-		transform: translateX(0%);
-	}
-	75% {
-		transform: translateX(350%);
-	}
 
+@keyframes rotate-service {
+	0% {
+		transform: rotateY(0deg);
+	}
 	100% {
-		transform: translateX(0%);
+		transform: rotateY(360deg);
 	}
 }
-@keyframes horizon {
-	/*deplacement point bleue de gauche a droite */
+@-webkit-keyframes rotate {
 	0% {
-		transform: translateX(0px);
+		transform: rotateY(0deg);
 	}
-	25% {
-		transform: translateX(-350%);
-	}
-	50% {
-		transform: translateX(0%);
-	}
-	75% {
-		transform: translateX(350%);
-	}
-
 	100% {
-		transform: translateX(0%);
-	} /*deplacement point bleue de gauche a droite */
-	0% {
-		transform: translateX(0px);
-	}
-	25% {
-		transform: translateX(-350%);
-	}
-	50% {
-		transform: translateX(0%);
-	}
-	75% {
-		transform: translateX(350%);
-	}
-
-	100% {
-		transform: translateX(0%);
+		transform: rotateY(360deg);
 	}
 }
 /*-------------END: ROND BLEU---------*/
@@ -596,14 +563,19 @@ header {
 
 .line-G {
 	background-color: #bdc3c7;
-	width: 50px;
+	width: clamp(15px, 6vw, 50px);
 	height: 1px;
 }
 
 .line-D {
 	background-color: lightgrey;
-	width: 50px;
+	width: clamp(15px, 6vw, 50px);
 	height: 1px;
+}
+.fa-solid,
+.fas {
+	font-weight: 900;
+	font-size: clamp(5px, 2vw, 17px);
 }
 /*-------END: ligne de part et d autre du rond bleu se deplacant horizontalement-----*/
 
@@ -611,7 +583,7 @@ header {
 	/*-----centrage et police du paragraphe sous titre: SERVICE---*/
 	color: black;
 	text-align: center;
-	font-size: 15px;
+	font-size: clamp(10px, 2vw, 15px);
 }
 
 .img-div-service {
@@ -619,20 +591,12 @@ header {
 	position: relative;
 	display: flex;
 	align-items: center;
-	left: 0;
-	right: 0;
-	transform: translate(50% 50%);
-	padding-left: 233px;
-	padding-top: 20px;
+	/* padding-left: clamp(0px, 13vw, 233px); */
+	padding-top: clamp(0px, 1vw, 20px);
 }
 
 .img-div-service > img {
 	position: relative;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-
 	padding: 0 0 44px 0;
 }
 
@@ -652,10 +616,8 @@ header {
 .column-icon {
 	/*---pr centrer les cercles avec icon par rapport a img----*/
 	display: flex;
-	text-align: center;
 	flex-direction: column;
 	justify-content: center;
-	align-items: flex-start;
 	font-size: 15px;
 	padding: 76px 0 0 0;
 }
@@ -669,20 +631,35 @@ header {
 .column-text {
 	/*-----titre et texte aligné sur icon----*/
 	display: flex;
-	text-align: center;
 	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
-	font-size: 15px;
+	font-size: clamp(11px, 3vw, 15px);
 	color: black;
-	margin: 0 197px 0 0;
-	gap: 18px;
-	padding: 68px 0 0 0;
+	gap: 16px;
+	padding: 41px 20px 0 0;
 }
 .column-text > h2 {
 	font-weight: bold;
 	font-size: 17px;
 }
+/* START: responsive tablette*/
+@media screen and (max-width: 1132px) {
+	.img-div-service {
+		flex-direction: column;
+	}
+	.column-icon,
+	.column-text {
+		padding: 0;
+	}
+	.column-text {
+		gap: 23px;
+		padding-bottom: clamp(5px, 4vw, 20px);
+	}
+	.img-div-service > img {
+		padding-bottom: clamp(5px, 2vw, 10px);
+	}
+}
+/* END: responsive tablette*/
+
 .circle {
 	/*-----contour autour des icon ----*/
 	position: relative;
@@ -718,6 +695,27 @@ header {
 	align-items: center;
 	padding: 0 20px 35px 0px;
 }
+/* START: responsive tablette*/
+@media screen and (max-width: 636px) {
+	.align-point {
+		padding: 0 15px 28px 0px;
+	}
+	.column-text {
+		gap: 13px;
+	}
+}
+@media screen and (max-width: 636px) {
+	.align-point {
+		display: none;
+	}
+	.column-container {
+		padding: 0 5px;
+	}
+	.column-text {
+		text-align: center;
+	}
+}
+/* END: responsive tablette*/
 
 @-webkit-keyframes rotate {
 	0% {
@@ -772,6 +770,56 @@ header {
 	padding-top: 40px;
 	font-size: 36px;
 }
+.iconB-projet {
+	color: #5cadd3;
+	font-size: 15px;
+	-webkit-animation: horizon 6s linear infinite; /*----pour compatibilité navigateur----------*/
+	animation: horizon 6s linear infinite; /*--animation sur 4 seconde,lineaire qui tourne en boucle---*/
+}
+@keyframes horizon {
+	/*deplacement point bleue de gauche a droite */
+	0% {
+		transform: translateX(0px);
+	}
+	10% {
+		transform: translateX(0px);
+	}
+	25% {
+		transform: translateX(-350%);
+	}
+	50% {
+		transform: translateX(0%);
+	}
+	75% {
+		transform: translateX(350%);
+	}
+
+	100% {
+		transform: translateX(0%);
+	} /*deplacement point bleue de gauche a droite*/
+}
+@-webkit-keyframes horizon {
+	/* deplacement point bleue de gauche a droite */
+	0% {
+		transform: translateX(0px);
+	}
+	10% {
+		transform: translateX(0px);
+	}
+	25% {
+		transform: translateX(-350%);
+	}
+	50% {
+		transform: translateX(0%);
+	}
+	75% {
+		transform: translateX(350%);
+	}
+
+	100% {
+		transform: translateX(0%);
+	} /*deplacement point bleue de gauche a droite*/
+}
 .conteneur .line-blue {
 	/*-----reg espacement point bleu ----*/
 	padding-top: 15px;
@@ -779,10 +827,9 @@ header {
 .conteneur p {
 	/*-----reg espacement et taille police  <P>----*/
 	text-align: center;
-	padding-top: 0px;
 	line-height: 30px;
 	font-size: 13px;
-	font-size: 15px;
+	font-size: clamp(10px, 2vw, 15px);
 }
 
 .menu-portfolio {
@@ -1013,8 +1060,52 @@ address h2 {
 	box-shadow: -1px -1px 4px 2px darkgrey;
 }
 
+.case-form div input::-webkit-input-placeholder {
+	color: black;
+	padding: 3px 0 0 3px;
+}
+
+.case-form div input::-moz-placeholder {
+	color: black;
+	padding: 3px 0 0 3px;
+}
+
+.case-form div input:-ms-input-placeholder {
+	color: black;
+	padding: 3px 0 0 3px;
+}
+
+.case-form div input::-ms-input-placeholder {
+	color: black;
+	padding: 3px 0 0 3px;
+}
+
 .case-form div input::placeholder {
 	color: black;
+	padding: 3px 0 0 3px;
+}
+
+textarea::-webkit-input-placeholder {
+	color: black;
+	font-size: 14px;
+	padding: 3px 0 0 3px;
+}
+
+textarea::-moz-placeholder {
+	color: black;
+	font-size: 14px;
+	padding: 3px 0 0 3px;
+}
+
+textarea:-ms-input-placeholder {
+	color: black;
+	font-size: 14px;
+	padding: 3px 0 0 3px;
+}
+
+textarea::-ms-input-placeholder {
+	color: black;
+	font-size: 14px;
 	padding: 3px 0 0 3px;
 }
 
