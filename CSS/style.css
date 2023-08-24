@@ -538,6 +538,15 @@ header {
 	animation: rotate-service 4s linear infinite; /*--animation sur 4 seconde,lineaire qui tourne en boucle---*/
 }
 
+@-webkit-keyframes rotate-service {
+	0% {
+		transform: rotateY(0deg);
+	}
+	100% {
+		transform: rotateY(360deg);
+	}
+}
+
 @keyframes rotate-service {
 	0% {
 		transform: rotateY(0deg);
@@ -927,6 +936,7 @@ header {
 	margin-left: clamp(10px, 3vw, 50px);
 	margin-right: clamp(10px, 3vw, 50px);
 }
+
 @media screen and (max-width: 1112px) {
 	.tab-img {
 		padding-left: clamp(30px, 4vw, 80px);
@@ -939,11 +949,11 @@ header {
 		padding: 0;
 	}
 }
-
+/* END: intégration responsive portfolio */
 .tab-img figure {
 	position: relative;
 	width: 330px;
-	margin: 15px 0 15px 15px;
+	margin: 15px 0;
 }
 
 .tab-img img {
@@ -952,14 +962,14 @@ header {
 
 .tab-img figcaption {
 	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	height: 0; /* pour effectuer la transition avec hover avec height 34%*/
+	left: 5%;
+	bottom: 1%;
+	width: 90%;
+	height: 0;
 	color: white;
 	background-color: rgba(41, 41, 41, 0.8);
 	-webkit-transition: 0.5s ease;
-	opacity: 0; /* --pour le hover pour etre invisible--- */
+	opacity: 0;
 	transition: 0.5s ease;
 }
 
@@ -1001,7 +1011,13 @@ figure:hover figcaption {
 	flex-wrap: wrap;
 	width: 100%;
 	height: 650px;
-	margin: 40px 0 0 0;
+	margin-top: 40px;
+}
+/* START : intégration responsive CONTACT */
+@media screen and (max-width: 947px) {
+	.conteneur-contact {
+		margin-top: clamp(15px, 3vw, 35px);
+	}
 }
 
 .iframe-conteneur {
@@ -1009,7 +1025,7 @@ figure:hover figcaption {
 	position: relative;
 	width: 100%;
 	height: 100%;
-	margin: 40px 0 0 0;
+	margin-top: 40px;
 	background-color: lightblue;
 }
 
@@ -1035,12 +1051,10 @@ iframe {
 form {
 	/*---formulaire-------*/
 	position: absolute;
-	top: 79px;
-	right: 0%;
+	top: 10%;
 	left: 60%;
-	bottom: 5%;
-	width: 329px;
-	height: 500px;
+	width: clamp(200px, 66vw, 329px);
+	height: clamp(200px, 100vw, 522px);
 	color: black;
 	border: 2px solid darkgrey;
 	padding: 20px;
@@ -1050,22 +1064,23 @@ form {
 }
 
 form h2 {
-	font-size: 18px;
+	font-size: clamp(15px, 3vw, 31px);
 	font-weight: bold;
 	font-style: normal;
-	padding: 13px 0px 23px 0px;
+	padding-top: clamp(0px, 3vw, 13px);
+	padding-bottom: clamp(10px, 3vw, 23px);
 }
 
 address {
 	padding: 20px;
 	font-style: normal;
-	font-size: 12.5px;
-	padding: 0 0 0 0;
+	font-size: clamp(10px, 2vw, 15px);
+	padding: 0;
 }
 
 address h2 {
 	font-weight: bold;
-	font-size: 15px;
+	font-size: clamp(12px, 2.5vw, 20px);
 	padding: 0;
 }
 .case-form {
@@ -1077,14 +1092,14 @@ address h2 {
 }
 .case-form div input {
 	width: 100%;
-	height: 26px;
+	height: clamp(15px, 5.5vw, 26px);
 	border-color: transparent; /*---enlever couleur noir de la bordure---*/
 	box-shadow: -1px -1px 6px 4px darkgrey;
 }
 
 .case-form textarea {
-	width: 240px;
-	height: 150px;
+	width: clamp(230px, 54.5vw, 332px);
+	height: clamp(97px, 2.5vw, 150px);
 	box-shadow: -1px -1px 4px 2px darkgrey;
 }
 
@@ -1165,10 +1180,31 @@ textarea::placeholder {
 	); /* ------pour descendre le button vers la bas---*/
 }
 
-.case-form div input:focus {
+.case-form div input:focus,
+.case-form div textarea:focus {
 	caret-color: #5cadd3; /*---pr changer la couleur du curseur avec l autofocus---*/
 	outline-color: #5cadd3; /*-pr changer ma couleur des bordures avec l autofocus--*/
 }
+
+/* START: FORM responsive  */
+@media screen and (max-width: 1024px) {
+	form {
+		top: 56%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+@media screen and (max-width: 567px) {
+	.btn2 {
+		width: 55%;
+	}
+}
+@media screen and (max-width: 512px) {
+	.case-form div {
+		padding-top: clamp(15px, 5vw, 30px);
+	}
+}
+
 /*---------------------START: FOOTER------------------*/
 
 footer {
