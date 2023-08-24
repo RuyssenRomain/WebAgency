@@ -1281,6 +1281,7 @@ footer img {
 		padding-top: clamp(75px, 12.5vw, 95px);
 	}
 }
+/*START: responsive format tablette */
 @media screen and (max-width: 752px) {
 }
 
@@ -1332,6 +1333,9 @@ footer img {
 		text-align: center;
 	}
 }
+/*END: responsive Format tablette*/
+
+/*START: responsive Format phone*/
 @media screen and (max-width: 430px) {
 	#footer-section {
 		display: flex;
@@ -1368,3 +1372,5 @@ footer img {
 		padding-bottom: 15px;
 	}
 }
+/*END : responsive Format phone */
+/*END: responsive FOOTER*/
