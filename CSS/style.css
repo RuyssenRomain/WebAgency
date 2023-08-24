@@ -1265,6 +1265,16 @@ footer img {
 .mentions-légales a:hover {
 	color: rgb(3, 3, 3);
 }
+.politiques-de-confidentialite a {
+	text-decoration: none;
+	color: inherit; /*---enlever la couleur des liens <a>---*/
+	width: 100px;
+	height: 100px;
+	padding-right: 5px;
+}
+.politiques-de-confidentialite a:hover {
+	color: rgb(3, 3, 3);
+}
 
 .footer-horaire li,
 .footer-reseaux li {
