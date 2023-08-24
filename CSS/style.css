@@ -1185,7 +1185,7 @@ textarea::placeholder {
 	caret-color: #5cadd3; /*---pr changer la couleur du curseur avec l autofocus---*/
 	outline-color: #5cadd3; /*-pr changer ma couleur des bordures avec l autofocus--*/
 }
-
+/* START: responsive CONTACT--- */
 /* START: FORM responsive  */
 @media screen and (max-width: 1024px) {
 	form {
@@ -1204,17 +1204,10 @@ textarea::placeholder {
 		padding-top: clamp(15px, 5vw, 30px);
 	}
 }
+/* END: FORM responsive  */
+/* END: responsive CONTACT--- */
 
 /*---------------------START: FOOTER------------------*/
-
-footer {
-	position: relative;
-	display: flex;
-	align-items: center;
-	width: 100%;
-	height: 479px;
-	justify-content: center;
-}
 
 footer p {
 	position: relative;
@@ -1230,16 +1223,19 @@ footer img {
 #footer-section {
 	position: relative;
 	width: 100%;
+	height: 100%;
 	display: flex;
 	justify-content: space-around;
-	align-items: flex-start;
-	font-size: 17px;
+	align-items: start;
+	font-size: clamp(12px, 2.5vw, 17px);
 	color: #333;
-	padding: 126px 0 100px;
+	padding-top: 100px;
 }
 
-#footer-section div h2 {
-	font-size: 30px;
+.footer-horaire h2,
+.footer-info-pratiques h2,
+.footer-reseaux h2 {
+	font-size: clamp(15px, 3vw, 35px);
 	padding-bottom: 30px;
 }
 
@@ -1249,11 +1245,13 @@ footer img {
 	flex-direction: column;
 }
 
-.footer-info-pratiques p {
+.copy {
 	/*--pour copyright--*/
-	position: absolute;
-	top: 280px;
-	left: -12px;
+	position: relative;
+	top: -13px;
+	left: 5%;
+	color: #333;
+	font-size: clamp(10px, 2.5vw, 14px);
 }
 
 .mentions-légales a {
@@ -1273,31 +1271,100 @@ footer img {
 	display: flex;
 	align-items: center;
 	padding: 5px 0;
+	text-align: start;
 }
 
-/*------------- START: integration responsive------------------- ------------*/
+/*START: responsive FOOTER*/
 
-/* -------------format ordi-------------------------------------------------- */
-/* @media screen and (max-width: 1024px) {
-	.general-page {
-		width: 90%;
-		font-size: 0.9em;
+@media screen and (max-width: 952px) {
+	#footer-section {
+		padding-top: clamp(75px, 12.5vw, 95px);
 	}
-} */
+}
+@media screen and (max-width: 752px) {
+}
 
-/* -------------format tablette ---------------------------------------------- */
-/* @media screen and (max-width: 767px) {
-	.general-page {
-		width: 90%;
-		font-size: 0.9em;
+@media screen and (max-width: 730px) {
+	#footer-section {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+		height: 440px;
+		flex-wrap: wrap;
+		padding-top: clamp(61px, 13.5vw, 91px);
 	}
-} */
-/* -------------format telephone ----------------------------------------------- */
-/* @media screen and (max-width: 480px) {
-	.general-page {
-		width: 90%;
-		font-size: 0.9em;
-	}
-} */
 
-/* ---------------END: intégration responsive------------------------------------ */
+	.footer-info-pratiques,
+	.footer-horaire {
+		display: flex;
+		width: 50%;
+		flex-direction: column;
+		align-items: center;
+	}
+	.footer-reseaux {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.reseaux {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		font-size: clamp(12px, 2.5vw, 17px);
+		padding-bottom: 7px;
+		align-items: center;
+	}
+	.footer-info-pratiques h2 {
+		padding-bottom: 29px;
+	}
+	.footer-horaire li {
+		text-align: start;
+	}
+
+	.footer-reseaux li {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 3px 0;
+		text-align: center;
+	}
+}
+@media screen and (max-width: 430px) {
+	#footer-section {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+	.footer-info-pratiques h2 {
+		padding-bottom: 0px;
+	}
+	.footer-horaire h2 {
+		padding-top: 25px;
+		padding-bottom: 10px;
+	}
+	.footer-horaire {
+		padding-bottom: 15px;
+	}
+
+	footer img {
+		width: clamp(30px, 3vw, 38px);
+	}
+	.reseaux {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		font-size: clamp(12px, 2.5vw, 17px);
+		padding-bottom: 7px;
+		align-items: center;
+		padding-bottom: 30px;
+	}
+	.footer-reseaux h2 {
+		padding-bottom: 15px;
+	}
+}
